@@ -21,4 +21,15 @@ class MemoryRepository implements BaseRepository
         return $this->items;
     }
 
+    public function find(string $id): ?Entity
+    {
+        foreach ($this->items as $item) {
+            if ($item->id === $id) {
+                return $item;
+            }
+        }
+
+        return null;
+    }
+
 }

@@ -6,9 +6,7 @@ use App\Core\Domain\Entities\Entity;
 
 interface BaseRepository
 {
-    /**
-     * @template T of Entity
-    */
     public function insert(Entity $entity): Entity;
     public function getAll(): array;
+    public function find(string $search): ?Entity;
 }
